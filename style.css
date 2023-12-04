@@ -1,0 +1,155 @@
+.header-content {
+    display: flex;
+    gap: 40px;
+    margin-left: 800px;
+
+}
+
+.header {
+    display: flex;
+    padding: 16px;
+    color: white;
+}
+
+.header-color {
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+   
+}
+
+.header-content a {
+    color: white;
+    text-decoration: none;
+}
+
+.banner img {
+    width: 100%;
+    height: 500px;
+    border: 1px solid white;
+    border-radius: 50px;
+    margin: 5px;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: white;
+}
+
+
+.foot {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+}
+
+.foot div address {
+    font-size: x-large;
+}
+
+.foot div p {
+    font-size: x-large;
+}
+
+.foot div {
+    padding: 32px;
+}
+
+.foot {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.header-logo {
+    padding-left: 16px;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#result1 {
+    color: white;
+}
+
+.product {
+    border: 1px solid black;
+    width: 200px;
+}
+
+.product img {
+    width: 100%;
+    height: 50%;
+}
+
+.product p {
+    text-align: center;
+}
+
+.product button {
+    margin: 20px;
+}
+
+#main-content {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.main {
+    margin: 20px;
+}
+
+#cart-quantity {
+    border: 1px solid red;
+    height: fit-content;
+    border-radius: 50px;
+
+}
+
+
+
+#cart-items {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.cart-product-info {
+    border: 1px solid black;
+    width: 25%;
+    padding: 10px;
+}
+
+.cart-product-info img {
+    width: 100%;
+    height: 500px;
+}
+.cart-product-info button{
+    width: 200px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+.addToCartBtn{
+    width: 150px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+.addToCartBtn:hover {
+    background-color: aqua;
+    color: black;
+}
+#root p{
+    font-size: x-large;
+}
+#root{
+    padding: 10px;
+    margin: 5px;
+}
