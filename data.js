@@ -171,7 +171,7 @@ function buy_Item_div(productname, productimage, productprice, productquantity) 
     order_product_price.innerHTML = "Product Price : $" + productprice;
 
     const order_product_quantity = document.createElement("p");
-    order_product_quantity.innerHTML = "Product quantity :" + productquantity;
+    order_product_quantity.innerHTML = "Product quantity : " + productquantity;
 
     const amount = productquantity * productprice;
 
@@ -199,14 +199,10 @@ function buy_Item_div(productname, productimage, productprice, productquantity) 
     payNow.addEventListener("click", () => {
         alert("product ordered");
     })
-
-
-
     const divEl2 = document.createElement("div");
     divEl2.classList.add("img1");
     const imgEl = document.createElement("img");
     imgEl.setAttribute("src", productimage);
-
 
     const closeBtn = document.createElement("button");
     closeBtn.classList.add("closeBtn");
@@ -215,9 +211,6 @@ function buy_Item_div(productname, productimage, productprice, productquantity) 
         divEl3.parentElement.removeChild(divEl3);
     })
     divEl2.append(imgEl, closeBtn);
-
-
-
     divEl1.append(orderSummary, order_product_name, order_product_price, order_product_quantity, TotalAmount, paymentMethods, emi, spanEl, cashOnDelivery, spanEl1, payNow);
     divEl3.append(divEl1, divEl2);
     return divEl3;

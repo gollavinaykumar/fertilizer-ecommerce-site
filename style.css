@@ -13,7 +13,7 @@
 
 .header-color {
     background-color: black;
-    border: 1px solid black;
+    border: 1px solid red;
     border-radius: 10px;
 
 }
@@ -26,7 +26,7 @@
 .banner img {
     width: 100%;
     height: 500px;
-    border: 1px solid white;
+    border: 1px solid red;
     border-radius: 50px;
     margin: 5px;
 }
@@ -57,7 +57,7 @@ body {
 }
 
 .foot {
-    border: 1px solid black;
+    border: 1px solid red;
     border-radius: 10px;
 }
 
@@ -74,7 +74,7 @@ body {
 }
 
 .product {
-    border: 1px solid black;
+    border: 1px solid red;
     width: 200px;
 }
 
@@ -121,8 +121,9 @@ body {
 }
 
 .cart-product-info {
-    border: 1px solid black;
-    width: 25%;
+    border: 1px solid red;
+    width: 12%;
+    height: auto;
     padding: 10px;
 }
 
@@ -132,7 +133,7 @@ body {
 }
 
 .cart-product-info button {
-    width: 200px;
+    width: 100px;
     padding: 10px;
     background-color: black;
     color: white;
@@ -160,7 +161,7 @@ body {
 }
 
 .buy_item {
-    border: 1px solid black;
+    border: 1px solid red;
     width: 100%;
     height: fit-content;
     display: flex;
@@ -182,7 +183,7 @@ body {
 }
 
 #totalCart {
-    border: 1px solid black;
+    border: 1px solid red;
     width: fit-content;
     float: right;
     background-color: black;
@@ -196,6 +197,11 @@ body {
 .closeBtn {
     float: right;
     border-radius: 50px;
+    background-color: black;
+    color: white;
+}
+
+body {
     background-color: black;
     color: white;
 }
