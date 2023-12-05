@@ -15,7 +15,7 @@
     background-color: black;
     border: 1px solid black;
     border-radius: 10px;
-   
+
 }
 
 .header-content a {
@@ -130,26 +130,52 @@ body {
     width: 100%;
     height: 500px;
 }
-.cart-product-info button{
+
+.cart-product-info button {
     width: 200px;
     padding: 10px;
     background-color: black;
     color: white;
 }
-.addToCartBtn{
+
+.addToCartBtn {
     width: 150px;
     padding: 10px;
     background-color: black;
     color: white;
 }
+
 .addToCartBtn:hover {
     background-color: aqua;
     color: black;
 }
-#root p{
+
+#root p {
     font-size: x-large;
 }
-#root{
+
+#root {
     padding: 10px;
     margin: 5px;
+}
+
+.buy_item {
+    border: 1px solid black;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.img1 img {
+    width: 100px;
+    height: 100px;
+}
+
+#paynow {
+    width: 100px;
+    padding: 5px;
+    background-color: black;
+    color: white;
 }

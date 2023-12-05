@@ -23,8 +23,8 @@ const USER_DETAILS = [
 loginBtn.addEventListener("click", () => {
     debugger;
     if ((inputEmail.value == USER_DETAILS[0].email) && (inputPassword.value == USER_DETAILS[0].password)) {
-
         alert("login success");
+        
     }
     else {
         alert("details not found");

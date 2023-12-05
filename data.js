@@ -39,10 +39,15 @@ const products = [
 ];
 const rootEl = document.getElementById("root");
 const cart_Product = document.createElement("p");
+const checkout_Items = document.getElementById("check-out-items");
 
 const MAIN_EL = document.getElementById("main-content");
 const CART_EL = document.getElementById("cart-quantity");
 const cart_items = document.getElementById("cart-items");
+const total_cart = document.getElementById("totalCart");
+
+
+
 let count = 0;
 products.forEach((ele) => {
     const OUTPUT = createProduct(ele);
@@ -108,6 +113,10 @@ function Product_div(productname, productprice, productimage, count1) {
 
     const Buy_now = document.createElement("button");
     Buy_now.innerHTML = "proceed to checkout";
+    Buy_now.addEventListener("click", () => {
+        const buy = buy_Item_div(productname, productimage, productprice, count1);
+        checkout_Items.appendChild(buy);
+    })
 
     const remove_cart = document.createElement("button");
     remove_cart.innerHTML = "remove Cart";
@@ -117,6 +126,66 @@ function Product_div(productname, productprice, productimage, count1) {
     })
     divEl.append(imageEl, PEl, priceEl, buttonEl, spanEl, buttonEl1, Buy_now, remove_cart);
     return divEl;
+}
+
+function buy_Item_div(productname, productimage, productprice, productquantity) {
+
+    const divEl3 = document.createElement("div");
+    divEl3.classList.add("buy_item");
+    const divEl1 = document.createElement("div");
+
+
+    const orderSummary = document.createElement("h3");
+    orderSummary.innerHTML = "Order Summary";
+
+    const order_product_name = document.createElement("p");
+    order_product_name.innerHTML = "Product Name : " + productname;
+
+    const order_product_price = document.createElement("p");
+    order_product_price.innerHTML = "Product Price : $" + productprice;
+
+    const order_product_quantity = document.createElement("p");
+    order_product_quantity.innerHTML = "Product quantity :" + productquantity;
+
+    const amount  = productquantity * productprice;
+
+    const TotalAmount = document.createElement("h3");
+    TotalAmount.innerHTML = "Total Amount : $ " + amount;
+
+    const paymentMethods = document.createElement("h3");
+    paymentMethods.innerHTML = "payment methods";
+
+    const emi = document.createElement("input");
+    emi.setAttribute("type", "checkbox");
+
+    const spanEl = document.createElement("span");
+    spanEl.innerHTML = "EMI";
+
+    const cashOnDelivery = document.createElement("input");
+    cashOnDelivery.setAttribute("type", "checkbox");
+
+    const spanEl1 = document.createElement("span");
+    spanEl1.innerHTML = "Cash on delivery";
+
+    const payNow = document.createElement("button");
+    payNow.id = "paynow";
+    payNow.innerHTML = "Pay now";
+    payNow.addEventListener("click", () => {
+        alert("product ordered");
+    })
+
+
+
+    const divEl2 = document.createElement("div");
+    divEl2.classList.add("img1");
+    const imgEl = document.createElement("img");
+    imgEl.setAttribute("src", productimage);
+    divEl2.appendChild(imgEl);
+
+
+    divEl1.append(orderSummary, order_product_name, order_product_price, order_product_quantity, TotalAmount, paymentMethods, emi, spanEl, cashOnDelivery, spanEl1, payNow);
+    divEl3.append(divEl1, divEl2);
+    return divEl3;
 }
 
 MAIN_EL.appendChild(PRODUCT_INFO);
