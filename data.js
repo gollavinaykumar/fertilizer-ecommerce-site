@@ -72,16 +72,23 @@ function createProduct(product) {
     ADD_TO_CART_BTN.innerHTML = "ADD TO CART";
     ADD_TO_CART_BTN.classList.add("addToCartBtn");
     ADD_TO_CART_BTN.addEventListener("click", () => {
-        debugger;
+
         count = count + 1;
         CART_EL.innerHTML = count;
+
         const cart_product_div = Product_div(product.name, product.price, product.image, 1);
         cart_items.appendChild(cart_product_div);
+
     })
 
     PRODUCT_INFO.append(PRODUCT_IMAGE, PRODUCT_NAME, PRODUCT_PRICE, ADD_TO_CART_BTN);
     return PRODUCT_INFO;
 }
+
+let addTotal = 0;
+const divEl4 = document.createElement("div");
+divEl4.classList.add("total-cart");
+const pEl1 = document.createElement("p");
 function Product_div(productname, productprice, productimage, count1) {
     const divEl = document.createElement("div");
     divEl.classList.add("cart-product-info");
@@ -99,7 +106,10 @@ function Product_div(productname, productprice, productimage, count1) {
     buttonEl.addEventListener("click", () => {
         if (count1 > 1) {
             spanEl.innerHTML = --count1;
+            addTotal = addTotal - productprice;
+            pEl1.innerHTML = "Total cart value : $ " + addTotal;
         }
+    
     })
 
     const spanEl = document.createElement("h3");
@@ -108,7 +118,10 @@ function Product_div(productname, productprice, productimage, count1) {
     const buttonEl1 = document.createElement("button");
     buttonEl1.innerHTML = "+";
     buttonEl1.addEventListener("click", () => {
+
         spanEl.innerHTML = ++count1;
+        addTotal = addTotal + productprice;
+        pEl1.innerHTML = "Total cart value : $ " + addTotal;
     })
 
     const Buy_now = document.createElement("button");
@@ -121,19 +134,32 @@ function Product_div(productname, productprice, productimage, count1) {
     const remove_cart = document.createElement("button");
     remove_cart.innerHTML = "remove Cart";
     remove_cart.addEventListener("click", () => {
+
         divEl.parentElement.removeChild(divEl);
         CART_EL.innerHTML = --count;
+        addTotal = addTotal - productprice*count1;
+        pEl1.innerHTML = "Total cart value : $ " + addTotal;
     })
+
+
+    addTotal += productprice;
+    pEl1.innerHTML = "Total cart value : $ " + addTotal;
+
+
     divEl.append(imageEl, PEl, priceEl, buttonEl, spanEl, buttonEl1, Buy_now, remove_cart);
     return divEl;
 }
+pEl1.innerHTML = "Total cart value : $ " + addTotal;
+divEl4.appendChild(pEl1);
+total_cart.appendChild(divEl4);
+
 
 function buy_Item_div(productname, productimage, productprice, productquantity) {
 
     const divEl3 = document.createElement("div");
     divEl3.classList.add("buy_item");
     const divEl1 = document.createElement("div");
-
+    divEl1.style.margin = "10px";
 
     const orderSummary = document.createElement("h3");
     orderSummary.innerHTML = "Order Summary";
@@ -147,7 +173,7 @@ function buy_Item_div(productname, productimage, productprice, productquantity) 
     const order_product_quantity = document.createElement("p");
     order_product_quantity.innerHTML = "Product quantity :" + productquantity;
 
-    const amount  = productquantity * productprice;
+    const amount = productquantity * productprice;
 
     const TotalAmount = document.createElement("h3");
     TotalAmount.innerHTML = "Total Amount : $ " + amount;

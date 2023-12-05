@@ -128,7 +128,7 @@ body {
 
 .cart-product-info img {
     width: 100%;
-    height: 500px;
+    height: 200px;
 }
 
 .cart-product-info button {
@@ -166,6 +166,7 @@ body {
     display: flex;
     gap: 10px;
     justify-content: center;
+    margin: 10px;
 }
 
 .img1 img {
@@ -176,6 +177,14 @@ body {
 #paynow {
     width: 100px;
     padding: 5px;
+    background-color: black;
+    color: white;
+}
+
+#totalCart {
+    border: 1px solid black;
+    width: fit-content;
+    float: right;
     background-color: black;
     color: white;
 }
