@@ -109,7 +109,7 @@ function Product_div(productname, productprice, productimage, count1) {
             addTotal = addTotal - productprice;
             pEl1.innerHTML = "Total cart value : $ " + addTotal;
         }
-    
+
     })
 
     const spanEl = document.createElement("h3");
@@ -137,7 +137,7 @@ function Product_div(productname, productprice, productimage, count1) {
 
         divEl.parentElement.removeChild(divEl);
         CART_EL.innerHTML = --count;
-        addTotal = addTotal - productprice*count1;
+        addTotal = addTotal - productprice * count1;
         pEl1.innerHTML = "Total cart value : $ " + addTotal;
     })
 
@@ -206,7 +206,16 @@ function buy_Item_div(productname, productimage, productprice, productquantity) 
     divEl2.classList.add("img1");
     const imgEl = document.createElement("img");
     imgEl.setAttribute("src", productimage);
-    divEl2.appendChild(imgEl);
+
+
+    const closeBtn = document.createElement("button");
+    closeBtn.classList.add("closeBtn");
+    closeBtn.innerHTML = "X";
+    closeBtn.addEventListener("click", () => {
+        divEl3.parentElement.removeChild(divEl3);
+    })
+    divEl2.append(imgEl, closeBtn);
+
 
 
     divEl1.append(orderSummary, order_product_name, order_product_price, order_product_quantity, TotalAmount, paymentMethods, emi, spanEl, cashOnDelivery, spanEl1, payNow);

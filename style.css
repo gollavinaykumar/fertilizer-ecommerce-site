@@ -164,7 +164,7 @@ body {
     width: 100%;
     height: fit-content;
     display: flex;
-    gap: 10px;
+    gap: 100px;
     justify-content: center;
     margin: 10px;
 }
@@ -185,6 +185,17 @@ body {
     border: 1px solid black;
     width: fit-content;
     float: right;
+    background-color: black;
+    color: white;
+}
+
+.total-cart {
+    padding: 5px;
+}
+
+.closeBtn {
+    float: right;
+    border-radius: 50px;
     background-color: black;
     color: white;
 }
